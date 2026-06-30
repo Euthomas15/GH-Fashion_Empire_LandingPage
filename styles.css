@@ -648,6 +648,12 @@
     }
     .video-card:hover .play-btn { transform: scale(1.1); background: var(--gold); } */
 
+    .social-icons img { 
+      filter: brightness(0) invert(1);
+    }
+
+    .social-icons img:hover { filter: brightness(0)}
+
     /* NEW CSS FOR VIDEO */
   .video-preview{
 
