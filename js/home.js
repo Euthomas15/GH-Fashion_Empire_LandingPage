@@ -2,7 +2,7 @@
   window.addEventListener('load', () => {
     setTimeout(() => {
       document.getElementById('loader').classList.add('hidden');
-    }, 2000);
+    }, 600);
   });
 
   // === NAV SCROLL ===

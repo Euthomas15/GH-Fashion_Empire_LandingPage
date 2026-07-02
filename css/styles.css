@@ -150,7 +150,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 60px;
+      gap: 50px;
 
       transform: translateX(100%);
       transition: transform 0.35s ease;
@@ -772,19 +772,14 @@
   }
 
   .close-video{
-
-      position:absolute;
-
-      top:-45px;
-
-      right:0;
-
-      color:white;
-
-      font-size:42px;
-
-      cursor:pointer;
-
+    position:absolute;
+    top:-75px;
+    right:0;
+    color: var(--gold);
+    font-size:42px;
+    cursor:pointer;
+    width: 40px;
+    font-weight: bolder;
   }
 
   /* NEW CSS STOPS HERE */
@@ -1015,7 +1010,7 @@
 
         background:var(--black);
 
-        padding:110px 20px;
+        padding:20px 20px;
 
     }
 
@@ -1065,11 +1060,11 @@
 
     }
 
-    .page-section ul{
+    /* .page-section ul{
 
         padding-left:20px;
 
-    }
+    } */
 
     .page-section li{
 
@@ -1287,7 +1282,6 @@
         opacity:1;
 
         transform:translateY(0);
-
     }
 
     /* ===== FOOTER ===== */
@@ -1295,6 +1289,7 @@
       background: var(--black); padding: 80px 40px 40px;
       border-top: 1px solid rgba(201,168,76,0.1);
     }
+    #footer-copy-Compliance :hover { color: var(--gold);}
     .footer-top {
       display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 60px;
       max-width: 1280px; margin: 0 auto 60px; padding-bottom: 60px;
@@ -1357,6 +1352,17 @@
       .gallery-grid { columns: 2; }
       .test-grid { display: grid; grid-template-columns: 1fr; gap: 24px;}
     }
+    
+    @media (min-width:800px) and (max-width:884px){
+      .nav-links{
+        display:none;}
+      .nav-cta{
+        display:none;}
+      .hamburger{
+        display:flex;}
+      .mobile-menu { width: 75%;}
+    }
+
     @media (max-width: 768px) {
       nav { padding: 16px 24px; }
       .nav-links, .nav-cta { display: none; }
@@ -1372,4 +1378,6 @@
         display: grid; grid-template-columns: 1fr; gap: 32px;
         margin-top: 64px;
       }
+      .about-mvv { display: grid; grid-template-columns: auto ; gap: 20px; margin-top: 32px; }
+
     }
