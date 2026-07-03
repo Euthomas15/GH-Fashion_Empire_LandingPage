@@ -617,6 +617,12 @@
     #video {
       padding: 120px 40px; background: var(--black);
     }
+
+    #popupVideo {   width: 100%;
+      max-width: 1000px; /* Maximum size on massive screens */
+      max-height: 75vh;  /* Prevents it from going off vertical screens */
+      aspect-ratio: 16 / 9; /* Maintains standard widescreen shape */
+    }
     .video-head { max-width: 1280px; margin: 0 auto 64px; }
     .video-grid {
       max-width: 1280px; margin: 0 auto;
