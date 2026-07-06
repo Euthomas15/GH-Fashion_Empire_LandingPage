@@ -6,69 +6,133 @@ const filterButtons = document.querySelectorAll(".portfolio-filter button");
 
 const portfolioCards = document.querySelectorAll(".portfolio-card");
 
-// filterButtons.forEach((button) => {
+/*==================================================
+            VISIBLE PORTFOLIO CARDS
+==================================================*/
 
-//     button.addEventListener("click", () => {
+// Stores the cards currently visible in the gallery.
+// By default, all cards are visible.
+let visibleCards = [...portfolioCards];
 
-//         console.log(button.dataset.filter);
 
-//     });
+/*==================================================
+            FILTER PORTFOLIO CARDS
+==================================================*/
 
-// });
+function filterPortfolio(filter) {
+
+    portfolioCards.forEach((card) => {
+
+        // Show every card.
+        if (filter === "all") {
+
+            card.classList.remove("hide");
+
+            card.style.display = "block";
+
+        }
+
+        // Show only matching cards.
+        else if (card.classList.contains(filter)) {
+
+            card.style.display = "block";
+
+            setTimeout(() => {
+
+                card.classList.remove("hide");
+
+            }, 20);
+
+        }
+
+        // Hide all other cards.
+        else {
+
+            card.classList.add("hide");
+
+            setTimeout(() => {
+
+                card.style.display = "none";
+
+            }, 300);
+
+        }
+
+    });
+
+}
+
 
 filterButtons.forEach((button) => {
 
     button.addEventListener("click", () => {
 
+        // Get the selected filter.
         const filter = button.dataset.filter;
 
-        console.log(filter);
 
+    
+    // Highlight the selected filter button.
+    updateActiveButton(button);
+
+    
+    // Update the array of visible portfolio cards.
+    updateVisibleCards(filter);
+
+    /*==================================================
+            UPDATE ACTIVE FILTER BUTTON
+    ==================================================*/
+
+    // Highlight the selected filter button.
+    function updateActiveButton(button) {
+
+        // Remove the active class from every button.
         filterButtons.forEach((btn) => {
 
             btn.classList.remove("active");
 
         });
 
+        // Highlight the clicked button.
         button.classList.add("active");
 
-        portfolioCards.forEach((card) => {
+    }
 
-            if (filter === "all") {
+    // Show or hide portfolio cards.
+    filterPortfolio(filter);
 
-                card.classList.remove("hide");
 
-                card.style.display = "block";
+    // Filter the portfolio cards.
+    filterPortfolio(filter);
+    
 
-            }
 
-            else if (card.classList.contains(filter)) {
+    /*==================================================
+        UPDATE VISIBLE PORTFOLIO CARDS
+    ==================================================*/
 
-                card.style.display = "block";
+    // Update the array of cards that are currently visible.
+    function updateVisibleCards(filter) {
 
-                setTimeout(() => {
+        if (filter === "all") {
 
-                    card.classList.remove("hide");
+            // Show every portfolio card.
+            visibleCards = [...portfolioCards];
 
-                }, 20);
+        } else {
 
-            }
+            // Keep only cards that belong to the selected category.
+            visibleCards = [...portfolioCards].filter((card) => {
 
-            else {
+                return card.classList.contains(filter);
 
-                card.classList.add("hide");
+            });
 
-                setTimeout(() => {
+        }
 
-                    card.style.display = "none";
+    }
 
-                }, 300);
-
-            }
-
-        });
-
-    });
+});
 
 });
 
@@ -87,29 +151,7 @@ const lightboxNext = document.querySelector(".lightbox-next");
 const lightboxPrev = document.querySelector(".lightbox-prev");
 
 
-/*==================================================
-        OPEN LIGHTBOX WHEN A CARD IS CLICKED
-==================================================*/
 
-// portfolioCards.forEach((card) => {
-
-//     card.addEventListener("click", () => {
-
-//         // Find the image inside the clicked card
-//         const image = card.querySelector("img");
-
-//         // Copy the image source into the lightbox
-//         lightboxImage.src = image.src;
-
-//         // Copy the image description
-//         lightboxImage.alt = image.alt;
-
-//         // Show the lightbox
-//         lightbox.classList.add("active");
-
-//     });
-
-// });
 
 
 /*==================================================
@@ -123,7 +165,10 @@ portfolioCards.forEach((card, index) => {
     card.addEventListener("click", () => {
 
         // Remember which card was clicked
-        currentImageIndex = index;
+        // currentImageIndex = index;
+
+        // Remember which visible image was clicked
+        currentImageIndex = visibleCards.indexOf(card);
 
         // Get the image inside the clicked card
         const image = card.querySelector("img");
@@ -174,17 +219,17 @@ lightbox.addEventListener("click", (event) => {
 ==================================================*/
 
 // Listen for every key pressed on the keyboard
-document.addEventListener("keydown", (event) => {
+// document.addEventListener("keydown", (event) => {
 
-    // Check if the Escape key was pressed
-    if (event.key === "Escape") {
+//     // Check if the Escape key was pressed
+//     if (event.key === "Escape") {
 
-        // Hide the lightbox
-        lightbox.classList.remove("active");
+//         // Hide the lightbox
+//         lightbox.classList.remove("active");
 
-    }
+//     }
 
-});
+// });
 
 /*==================================================
         CURRENT IMAGE INDEX
@@ -206,14 +251,17 @@ lightboxNext.addEventListener("click", () => {
 
     // If we've reached the last image,
     // go back to the first one.
-    if (currentImageIndex >= portfolioCards.length) {
+    if (currentImageIndex >= visibleCards.length) {
 
         currentImageIndex = 0;
 
     }
 
     // Find the image inside the current portfolio card
-    const image = portfolioCards[currentImageIndex].querySelector("img");
+    
+    // const image = portfolioCards[currentImageIndex].querySelector("img");
+
+    const image = visibleCards[currentImageIndex].querySelector("img");
 
     // Update the lightbox image
     lightboxImage.src = image.src;
@@ -236,12 +284,17 @@ lightboxPrev.addEventListener("click", () => {
     // jump to the last image.
     if (currentImageIndex < 0) {
 
-        currentImageIndex = portfolioCards.length - 1;
+        // currentImageIndex = portfolioCards.length - 1;
+        currentImageIndex = visibleCards.length - 1;
 
     }
 
     // Find the image inside the current portfolio card
-    const image = portfolioCards[currentImageIndex].querySelector("img");
+
+    // const image = portfolioCards[currentImageIndex].querySelector("img");
+    
+    const image = visibleCards[currentImageIndex].querySelector("img");
+
 
     // Update the lightbox image
     lightboxImage.src = image.src;
@@ -280,5 +333,62 @@ document.addEventListener("keydown", (event) => {
         lightboxPrev.click();
 
     }
+
+});
+
+/*==================================================
+            PORTFOLIO SCROLL REVEAL
+==================================================*/
+
+// Create an observer that watches portfolio cards
+// as they enter and leave the viewport.
+const revealObserver = new IntersectionObserver((entries) => {
+
+    entries.forEach((entry) => {
+
+        // If the card enters the viewport...
+        if (entry.isIntersecting) {
+
+            // Wait a little before showing the card.
+            setTimeout(() => {
+
+                entry.target.classList.add("show");
+
+            }, animationDelay);
+
+            // Increase the delay for the next card.
+            animationDelay += 40;
+
+        }
+
+        // If the card leaves the viewport...
+        else {
+
+            // Hide the card.
+            entry.target.classList.remove("show");
+
+            // Reset the delay so the next visible group
+            // starts from the beginning.
+            animationDelay = 0;
+
+        }
+
+    });
+
+}, {
+
+    // Start the animation when about 15% of the card
+    // becomes visible.
+    threshold: 0.15
+
+});
+
+// Counter used to stagger cards as they appear.
+let animationDelay = 0;
+
+// Observe every portfolio card.
+portfolioCards.forEach((card) => {
+
+    revealObserver.observe(card);
 
 });

@@ -373,63 +373,6 @@
     </div>
   </section>
 
-  <!-- VIDEO -->
-  <!-- <section id="video">
-    <div class="video-head reveal">
-      <div class="section-label">Behind the Scenes</div>
-      <h2 class="section-title">Watch Us Create</h2>
-      <div class="gold-line"></div>
-      <p class="section-subtitle">
-        Go behind the needle and see the artistry, precision, and passion that goes into every GH Fashion Empire creation.
-      </p>
-    </div>
-
-    <div class="video-grid">
-      <div class="video-card reveal">
-        <video class="video-thumb" controls preload="metadata" poster="assets/GH-fashion-Clients-Photos/GH-Fashion-Behind the Scenes-photo.jpeg">
-          <source src="assets/GH-fashion-Vidoes/GH-Fashion_studio_workspace_.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <div class="video-info">
-          <h4>Behind the Scenes</h4>
-          <span>Studio Tour</span>
-        </div>
-      </div>
-
-      <div class="video-card reveal reveal-delay-1">
-        <video class="video-thumb" controls preload="metadata" poster="assets/GH-fashion-Clients-Photos/The Sewing Process.png">
-          <source src="assets/GH-fashion-Vidoes/Sewing-video 4.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <div class="video-info">
-          <h4>The Sewing Process</h4>
-          <span>Craftsmanship</span>
-        </div>
-      </div>
-
-      <div class="video-card reveal reveal-delay-2">
-        <video class="video-thumb" controls preload="metadata" poster="assets/images/fashion-runway-poster.jpg">
-          <source src="assets/videos/fashion-runway.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <div class="video-info">
-          <h4>Fashion Runway</h4>
-          <span>Collection Showcase</span>
-        </div>
-      </div>
-
-      <div class="video-card reveal reveal-delay-3">
-        <video class="video-thumb" controls preload="metadata" poster="assets/images/client-fittings-poster.jpg">
-          <source src="assets/videos/client-fittings.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <div class="video-info">
-          <h4>Client Fittings</h4>
-          <span>The Experience</span>
-        </div>
-      </div>
-    </div>
-  </section> -->
 
   <!-- ================= VIDEO SECTION ================= -->
 
@@ -526,12 +469,12 @@
 
             <div
                 class="video-preview"
-                data-video="assets/videos/fashion-runway.mp4">
+                data-video="assets/GH-fashion-Vidoes/GH-fashion-Royal Luxury.mp4">
 
                 <img
-                    src="assets/images/fashion-runway-poster.jpg"
+                    src="assets/GH-fashion-Clients-Photos/GH-fashion-Royal Luxury-photo.png"
                     class="video-poster"
-                    alt="Fashion Runway"
+                    alt="Royal Luxury"
                   >
 
                 <div class="play-button">
@@ -544,7 +487,7 @@
 
             <div class="video-info">
 
-                <h4>Fashion Runway</h4>
+                <h4>Royal Luxury</h4>
 
                 <span>Collection Showcase</span>
 
@@ -828,7 +771,8 @@
           <div class="map-placeholder">Google Maps - Coming Soon!</div>
         </div>
 
-        <form class="contact-form reveal reveal-delay-1">
+        <!-- CONTACT FORM  -->
+        <form id="contact-form" class="contact-form reveal reveal-delay-1">
           <div class="form-row">
             <div class="form-group">
               <label for="fullName">Full Name</label>
@@ -856,10 +800,12 @@
             <textarea id="message" placeholder="Tell us about your vision, occasion, preferred style..."></textarea>
           </div>
 
-          <button class="btn btn-gold" type="submit" style="width: 100%; border: none; font-size: 0.78rem;">
+          <button id="submit-btn" class="btn btn-gold" type="submit" style="width: 100%; border: none; font-size: 0.78rem;">
             Send Message &rarr;
           </button>
         </form>
+
+
       </div>
     </div>
   </section>
@@ -933,8 +879,8 @@
     </div>
 
     <div class="footer-bottom">
-      <p class="footer-copy">&copy; 2026 <span>GH Fashion Empire</span>. All rights reserved. Designed with &hearts; in Port Harcourt.</p>
-      <p id="footer-copy-Compliance" class="footer-copy" style="color: var(--gray);"><a href="faq.html">FAQ &middot;</a> <a href="privacy.html">Privacy Policy</a> &middot; <a href="#"> Terms of Service</a></p>
+      <p class="footer-copy">&copy; <span id="current-year"></span> <span>GH Fashion Empire</span>. All rights reserved. Designed with &hearts; in Port Harcourt.</p>
+      <p id="footer-copy-Compliance" class="footer-copy" style="color: var(--gray);"><a href="faq.html">FAQ &middot;</a> <a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html"> Terms of Service</a></p>
     </div>
   </footer>
 
