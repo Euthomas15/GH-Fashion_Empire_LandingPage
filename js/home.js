@@ -1,4 +1,15 @@
-  // === LOADER ===
+ /*==================================================
+            INITIALIZE EMAILJS
+==================================================*/
+
+// Initialize EmailJS with your Public Key.
+emailjs.init({
+
+    publicKey: "xV9FicIJZkt-JbBMq"
+
+});
+ 
+ // === LOADER ===
   window.addEventListener('load', () => {
     setTimeout(() => {
       document.getElementById('loader').classList.add('hidden');
@@ -146,7 +157,7 @@ contactForm.addEventListener("submit", (event) => {
     // Prevent the browser from refreshing the page.
     event.preventDefault();
 
-    /*==================================================
+    /*==============================================
             GET FORM VALUES
   ==================================================*/
 
@@ -166,7 +177,7 @@ contactForm.addEventListener("submit", (event) => {
   const message = document.getElementById("message").value.trim();
 
 
-  /*==================================================
+  /*================================================
               VALIDATE EMPTY FIELDS
   ==================================================*/
 
@@ -192,7 +203,7 @@ contactForm.addEventListener("submit", (event) => {
 
   }
 
-  /*==================================================
+  /*================================================
             VALIDATE EMAIL ADDRESS
   ==================================================*/
 
@@ -210,11 +221,82 @@ contactForm.addEventListener("submit", (event) => {
   }
 
   /*==================================================
+            VALIDATE PHONE NUMBER
+  ==================================================*/
+
+  // Regular expression used to validate phone numbers.
+  const phonePattern = /^\+?[0-9]{10,15}$/;
+
+  // Check if the phone number is valid.
+  if (!phonePattern.test(phone)) {
+
+      alert("Please enter a valid phone number.");
+
+      // Stop the form submission.
+      return;
+
+  }
+
+  /*================================================
               TEST PASSED VALIDATION
   ==================================================*/
 
   // This only runs if every field has been completed.
-  console.log("All fields are filled.");
+  // console.log("All fields are filled.");
+
+  /*==================================================
+                  SEND EMAIL
+  ==================================================*/
+
+  // Send the form data to EmailJS.
+  emailjs.send(
+
+      "service_dpy48qh",
+
+      "template_8bjl09f",
+
+      {
+
+          fullName: fullName,
+
+          email: email,
+
+          phone: phone,
+
+          service: service,
+
+          message: message
+
+      }
+
+  )
+
+  // Email sent successfully.
+  .then(() => {
+
+      // Clear every field after sending.
+      contactForm.reset();
+
+      /*==================================================
+              SHOW SUCCESS MESSAGE
+      ==================================================*/
+
+      // Hide the contact form.
+      contactForm.style.display = "none";
+
+      // Show the success message.
+      document.getElementById("form-success").style.display = "block";
+
+  })
+
+  // Something went wrong.
+  .catch((error) => {
+
+      console.error(error);
+
+      alert("Sorry, something went wrong. Please try again.");
+
+  });
 
 });
 
