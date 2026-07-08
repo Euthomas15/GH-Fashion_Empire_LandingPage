@@ -209,29 +209,6 @@
       z-index: 10;
     }
 
-  /* .mobile-menu {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: var(--black);
-    z-index: 9999;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 36px;
-  } */
-
-  /* .mobile-menu:target {
-    display: flex;
-  } */
-
-  /* .mobile-menu a {
-    font-family: var(--ff-display);
-    font-size: 1.6rem;
-    color: var(--cream);
-    letter-spacing: 0.1em;
-    transition: color var(--trans);
-  } */
 
   .mobile-menu a:not(.close-menu) {
     font-family: var(--ff-display);
@@ -258,22 +235,6 @@
     cursor: pointer;
   }
 
-  /* .hamburger span { width: 24px; height: 1px; background: var(--gold); transition: var(--trans); }
-    .mobile-menu {
-      display: none; position: fixed; inset: 0; background: var(--black);
-      z-index: 999; flex-direction: column; align-items: center; justify-content: center;
-      gap: 36px;
-    } */
-    /* .mobile-menu.open { display: flex; } */
-    /* .mobile-menu a {
-      font-family: var(--ff-display); font-size: 1.6rem; color: var(--cream);
-      letter-spacing: 0.1em; transition: color var(--trans);
-    }
-    .mobile-menu a:hover { color: var(--gold); }
-    .close-menu {
-      position: absolute; top: 24px; right: 32px;
-      font-size: 2rem; color: var(--gold); cursor: pointer;
-    } */
 
     /* ===== SECTION UTILITIES ===== */
     section { position: relative; overflow: hidden; }
@@ -574,6 +535,153 @@
     }
     .service-card:hover a { gap: 14px; }
 
+  /*==================================================
+                  FASHION TRAINING
+  ==================================================*/
+  /* ===== TRAINING SECTION ===== */
+
+#training {
+  padding: 120px 40px;
+  background: var(--charcoal);
+  position: relative;
+}
+
+#training::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.05) 0%, transparent 60%);
+}
+
+.training-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.training-head {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+/* Course Cards Grid */
+.training-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 80px;
+}
+
+.training-card {
+  background: rgba(201,168,76,0.03);
+  border: 1px solid rgba(201,168,76,0.12);
+  border-radius: var(--radius);
+  padding: 36px 28px;
+  transition: var(--trans);
+  position: relative;
+  overflow: hidden;
+}
+
+.training-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gold);
+  transition: width var(--trans);
+}
+
+.training-card:hover {
+  background: rgba(201,168,76,0.06);
+  border-color: rgba(201,168,76,0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+}
+
+.training-card:hover::after {
+  width: 100%;
+}
+
+#training-icon {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  margin-left: 0px;
+}
+
+.training-card h3 {
+  font-family: var(--ff-display);
+  font-size: 1.2rem;
+  color: var(--white);
+  margin-bottom: 14px;
+}
+
+.training-card p {
+  font-size: 0.92rem;
+  color: var(--gray);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.training-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.training-list li {
+  font-family: var(--ff-ui);
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  color: var(--gold-lt);
+}
+
+/* Training Bottom CTA */
+.training-cta {
+  background: rgba(201,168,76,0.04);
+  border: 1px solid rgba(201,168,76,0.15);
+  border-radius: var(--radius);
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.training-cta h3 {
+  font-family: var(--ff-display);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  color: var(--white);
+  margin-bottom: 16px;
+}
+
+.training-cta p {
+  font-family: var(--ff-body);
+  font-size: 1.05rem;
+  color: var(--gray-lt);
+  max-width: 560px;
+  margin: 0 auto 36px;
+  line-height: 1.8;
+}
+
+.training-cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Responsive */
+/* @media (max-width: 768px) {
+  #training {
+    padding: 80px 24px;
+  }
+  .training-cta {
+    padding: 40px 24px;
+  }
+}
+
+  */
     /* ===== GALLERY ===== */
     #gallery {
       padding: 120px 40px;
@@ -1490,6 +1598,11 @@
         width: auto;
         margin: 60px auto 0px auto;
         text-align: center;
-    }
-
+      }
+      #training {
+        padding: 80px 24px;
+      }
+      .training-cta {
+        padding: 40px 24px;
+      }
     }
