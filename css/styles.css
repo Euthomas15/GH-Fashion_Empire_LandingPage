@@ -636,7 +636,7 @@
   font-family: var(--ff-ui);
   font-size: 0.78rem;
   letter-spacing: 0.05em;
-  color: var(--gold-lt);
+  color: var(--gold);
 }
 
 /* Training Bottom CTA */
@@ -671,17 +671,7 @@
   flex-wrap: wrap;
 }
 
-/* Responsive */
-/* @media (max-width: 768px) {
-  #training {
-    padding: 80px 24px;
-  }
-  .training-cta {
-    padding: 40px 24px;
-  }
-}
-
-  */
+  .em-line {color: var(--gold); font-size: 49px;}
     /* ===== GALLERY ===== */
     #gallery {
       padding: 120px 40px;
@@ -908,7 +898,7 @@
 
     /* ===== TESTIMONIALS ===== */
     #testimonials {
-      padding: 120px 40px; background: var(--charcoal);
+      padding: 90px 40px 120px 40px; background: var(--charcoal);
     }
     .test-head { max-width: 1280px; margin: 0 auto 64px; text-align: center; }
     .test-head .section-subtitle { margin: 0 auto; }
