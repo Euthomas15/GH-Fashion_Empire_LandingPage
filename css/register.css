@@ -1,0 +1,213 @@
+/*==================================================
+            TRAINING PAGE
+==================================================*/
+
+.training-page{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:60px 20px;
+
+    background:
+        linear-gradient(rgba(10,10,10,.75), rgba(10,10,10,.75)),
+        url("../assets/GH-fashion-Clients-Photos/GH-Fashion-Behind the Scenes-photo.jpeg") center/cover no-repeat;
+
+}
+
+.training-card{
+
+    width:min(700px,100%);
+
+    background:rgba(26,26,26,.92);
+
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(201,168,76,.18);
+
+    border-radius:18px;
+
+    padding:50px;
+
+    box-shadow:0 25px 60px rgba(0,0,0,.35);
+
+}
+
+.training-card .btn{
+
+    width:100%;
+
+    margin-top:20px;
+
+}
+
+.training-card .btn-secondary{
+
+    margin-top:15px;
+
+}
+
+/*==================================================
+        TRAINING SUCCESS MESSAGE
+==================================================*/
+
+.training-success{
+
+    display:none;
+
+    text-align:center;
+
+    margin-top:20px;
+
+}
+
+.training-success h3{
+
+    font-family:var(--ff-display);
+
+    color:var(--gold);
+
+    margin-bottom:15px;
+
+}
+
+.training-success p{
+
+    color:var(--gray-lt);
+
+    line-height:1.8;
+
+    margin-bottom:30px;
+
+}
+
+/*==================================================
+                PREMIUM SELECT
+==================================================*/
+
+.select-wrapper{
+
+    position:relative;
+
+    width:100%;
+
+}
+
+.select-wrapper select{
+
+    width:100%;
+
+    height:56px;
+
+    padding:0 50px 0 18px;
+
+    border:1px solid rgba(201,168,76,.18);
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,.05);
+
+    color:var(--white);
+
+    font-family:var(--ff-ui);
+
+    font-size:1rem;
+
+    outline:none;
+
+    appearance:none;
+
+    -webkit-appearance:none;
+
+    -moz-appearance:none;
+
+    cursor:pointer;
+
+    transition:var(--trans);
+
+}
+
+.select-wrapper select:hover{
+
+    border-color:rgba(201,168,76,.45);
+
+}
+
+.select-wrapper select:focus{
+
+    border-color:var(--gold);
+
+    box-shadow:0 0 0 4px rgba(201,168,76,.12);
+
+}
+
+.select-wrapper svg{
+
+    position:absolute;
+
+    top:50%;
+
+    right:18px;
+
+    width:18px;
+
+    height:18px;
+
+    transform:translateY(-50%);
+
+    color:var(--gold);
+
+    pointer-events:none;
+
+    transition:transform .3s ease;
+
+}
+
+.select-wrapper:focus-within svg{
+
+    transform:translateY(-50%) rotate(180deg);
+
+}
+
+.select-wrapper option{
+
+    background:var(--charcoal);
+
+    color:var(--white);
+
+}
+
+.dropdown-icon{
+
+    position:absolute;
+
+    top:50%;
+
+    right:18px;
+
+    width:18px;
+
+    height:18px;
+
+    color:var(--gold);
+
+    transform:translateY(-50%);
+
+    pointer-events:none;
+
+    transition:transform .35s ease,color .35s ease;
+
+}
+
+.select-wrapper:focus-within .dropdown-icon{
+
+    transform:translateY(-50%) rotate(180deg);
+
+    color:var(--gold-lt);
+
+}

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Fashion Training Registration | GH Fashion Empire</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="css/register.css" />
+        <link rel="stylesheet" href="css/styles.css">
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="assets/favicons/favicon.ico">
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
+    </head>
+
+    <body>
+
+    <main class="training-page">
+
+        <div class="training-card">
+
+            <div class="portfolio-intro">
+
+                <span class="section-tag">
+
+                   GH Fashion Academy
+
+                </span>
+
+                <h2>
+
+                    Register for Training
+
+                </h2>
+
+                <p>
+
+                    Complete the form below and our team will contact you with the next available training schedule.
+
+                </p>
+
+            </div>
+
+            <form id="training-form" class="contact-form">
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="fullName">Full Name</label>
+
+                        <input
+                            id="fullName"
+                            type="text"
+                            placeholder="Your full name"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="email">Email Address</label>
+
+                        <input
+                            id="email"
+                            type="email"
+                            placeholder="your@email.com"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="phone">Phone Number</label>
+
+                        <input
+                            id="phone"
+                            type="tel"
+                            placeholder="+234..."
+                            required
+                        >
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="age">Age</label>
+
+                        <input
+                            id="age"
+                            type="number"
+                            placeholder="18"
+                        >
+
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="program">Training Program</label>
+
+                    <div class="select-wrapper">
+
+                        <select id="program" required>
+
+                            <option value="">Choose a program</option>
+
+                            <option value="Beginner Fashion Training">Beginner Fashion Training</option>
+
+                            <option value="Advanced Tailoring">Advanced Tailoring</option>
+
+                            <option value="Pattern Drafting & Measurements">Pattern Drafting & Measurements</option>
+
+                            <option value="Fashion Business Mentorship">Fashion Business Mentorship</option>
+
+                        </select>
+
+                        <i class="dropdown-icon" data-lucide="chevron-down"></i>
+
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="experience">Previous Experience</label>
+
+                    <div class="select-wrapper">
+
+                        <select id="experience">
+
+                            <option value="No Experience">No Experience</option>
+
+                            <option value="Beginner">Beginner</option>
+
+                            <option value="Intermediate">Intermediate</option>
+
+                            <option value="Advanced">Advanced</option>
+
+                        </select>
+
+                        <i class="dropdown-icon" data-lucide="chevron-down"></i>
+                        
+
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="message">
+
+                        Additional Message
+
+                    </label>
+
+                    <textarea
+                        id="message"
+                        placeholder="Tell us anything you'd like us to know..."
+                    ></textarea>
+
+                </div>
+
+                <button
+                    id="submit-btn"
+                    class="btn btn-gold"
+                    type="submit"
+                    style="width:100%; border:none;">
+
+                    Register Now →
+
+                </button>
+
+            </form>
+
+            <div class="training-success" id="training-success">
+
+                <h3>Registration Submitted!</h3>
+
+                <p>
+
+                    Thank you for registering for our Fashion Training Program.
+
+                    We'll contact you shortly with the next available schedule.
+
+                </p>
+
+                <a href="index.html" class="btn btn-gold">
+
+                    Return to Website
+
+                </a>
+
+            </div>
+
+            <a href="index.html" class="btn btn-secondary">
+
+                ← Back to Website
+
+            </a>
+
+        </div>
+
+
+    </main>    
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="js/register.js"></script>
+    </body>
+</html>

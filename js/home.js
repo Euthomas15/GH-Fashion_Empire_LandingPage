@@ -298,5 +298,73 @@ contactForm.addEventListener("submit", (event) => {
 
   });
 
+
+  /*==================================================
+        TRAINING REGISTRATION MODAL
+==================================================*/
+
+const trainingOpen = document.getElementById("training-open");
+console.log(trainingOpen);
+
+const trainingModal = document.getElementById("training-modal");
+
+const trainingClose = document.getElementById("training-close");
+
+/*==================================================
+            OPEN MODAL
+==================================================*/
+
+trainingOpen.addEventListener("click", (event) => {
+
+    event.preventDefault();
+
+    trainingModal.classList.add("active");
+
+});
+
+/*==================================================
+            CLOSE MODAL
+==================================================*/
+
+trainingClose.addEventListener("click", () => {
+
+    trainingModal.classList.remove("active");
+
+});
+
+/*==================================================
+        CLOSE WHEN CLICKING BACKGROUND
+==================================================*/
+
+trainingModal.addEventListener("click", (event) => {
+
+    if (event.target === trainingModal) {
+
+        trainingModal.classList.remove("active");
+
+    }
+
+});
+
+/*==================================================
+            CLOSE WITH ESC KEY
+==================================================*/
+
+document.addEventListener("keydown", (event) => {
+
+    if (
+
+        event.key === "Escape" &&
+
+        trainingModal.classList.contains("active")
+
+    ) {
+
+        trainingModal.classList.remove("active");
+
+    }
+
+});
+
 });
 
