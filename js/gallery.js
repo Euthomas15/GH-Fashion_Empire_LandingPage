@@ -54,7 +54,7 @@ function filterPortfolio(filter) {
 
                 card.style.display = "none";
 
-            }, 300);
+            }, 150);
 
         }
 
@@ -214,22 +214,7 @@ lightbox.addEventListener("click", (event) => {
 
 });
 
-/*==================================================
-        CLOSE LIGHTBOX WITH ESC KEY
-==================================================*/
 
-// Listen for every key pressed on the keyboard
-// document.addEventListener("keydown", (event) => {
-
-//     // Check if the Escape key was pressed
-//     if (event.key === "Escape") {
-
-//         // Hide the lightbox
-//         lightbox.classList.remove("active");
-
-//     }
-
-// });
 
 /*==================================================
         CURRENT IMAGE INDEX
