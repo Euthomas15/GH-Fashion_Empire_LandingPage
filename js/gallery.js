@@ -54,7 +54,7 @@ function filterPortfolio(filter) {
 
                 card.style.display = "none";
 
-            }, 150);
+            }, 200);
 
         }
 
@@ -342,7 +342,7 @@ const revealObserver = new IntersectionObserver((entries) => {
             }, animationDelay);
 
             // Increase the delay for the next card.
-            animationDelay += 40;
+            animationDelay += 10;
 
         }
 
