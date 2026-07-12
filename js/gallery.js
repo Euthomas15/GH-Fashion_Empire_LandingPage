@@ -342,7 +342,7 @@ const revealObserver = new IntersectionObserver((entries) => {
             }, animationDelay);
 
             // Increase the delay for the next card.
-            animationDelay += 10;
+            animationDelay += 8;
 
         }
 
@@ -364,7 +364,7 @@ const revealObserver = new IntersectionObserver((entries) => {
 
     // Start the animation when about 15% of the card
     // becomes visible.
-    threshold: 0.15
+    threshold: 0.10
 
 });
 
