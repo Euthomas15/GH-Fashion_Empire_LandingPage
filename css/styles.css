@@ -1603,7 +1603,7 @@
 ==================================================*/
 
 /* Chrome, Edge, Safari */
-::-webkit-scrollbar{
+/* ::-webkit-scrollbar{
 
     width:12px;
 
@@ -1639,7 +1639,7 @@
         var(--gold)
     );
 
-}
+} */
 
 /* Firefox */
 html{
