@@ -1602,45 +1602,6 @@
             PREMIUM SCROLLBAR
 ==================================================*/
 
-/* Chrome, Edge, Safari */
-/* ::-webkit-scrollbar{
-
-    width:12px;
-
-}
-
-::-webkit-scrollbar-track{
-
-    background:var(--black);
-
-}
-
-::-webkit-scrollbar-thumb{
-
-    background:linear-gradient(
-        180deg,
-        var(--gold),
-        var(--gold-dk)
-    );
-
-    border-radius:100px;
-
-    border:2px solid var(--black);
-
-    transition:var(--trans);
-
-}
-
-::-webkit-scrollbar-thumb:hover{
-
-    background:linear-gradient(
-        180deg,
-        var(--gold-lt),
-        var(--gold)
-    );
-
-} */
-
 /* Firefox */
 html{
 
